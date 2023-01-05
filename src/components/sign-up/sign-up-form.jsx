@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 
 import { 
     createUserDocumentFromAuth,
@@ -59,39 +59,43 @@ export const SignUpForm= () => {
             <h2>Don't have an account?</h2>
             <span>Sign up with your email and password</span>
             <form onSubmit={handleSubmit}>
-                <FormInput 
-                    label='Display Name'
+
+                <FormInput
+                    label='Display Name' 
                     type="text" 
+                    name='displayName' 
                     required 
-                    onChange={handleChange} 
-                    name="displayName" 
-                    value={displayName} 
+                    defaultValue={email}
+                    onChange={handleChange}
                 />
-                <FormInput 
-                    label='Email'
+
+                <FormInput
+                    label='Email' 
                     type="email" 
+                    name='email' 
                     required 
-                    onChange={handleChange} 
-                    name="email" 
-                    value={email} 
+                    defaultValue={email}
+                    onChange={handleChange}
                 />
+
                 <FormInput 
                     label='Password'
                     type="password" 
+                    name='password' 
                     required 
-                    onChange={handleChange} 
-                    name="password" 
-                    value={password} 
+                    defaultValue={password}
+                    onChange={handleChange}
                 />
+
                 <FormInput 
                     label='Confirm Password'
                     type="password" 
+                    name='confirmPassword' 
                     required 
-                    onChange={handleChange} 
-                    name="confirmPassword" 
-                    value={confirmPassword} 
+                    defaultValue={confirmPassword}
+                    onChange={handleChange}
                 />
-                <Button buttonType={''} type='submit'>Sign Up</Button>
+                <Button type="submit">Sign up</Button>
             </form>
         </div>
     )
